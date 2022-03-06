@@ -1,0 +1,49 @@
+BSC Testnet Contracts :[{
+
+    Owner: 0x34B1E990E6A0ED316C169D4e5Cac0BEDdD11139C
+    Vault: 
+    Vested:
+    BETS: 0x9E8128A37A04960b4a8F55A26CE988e6E5d60F9e
+    sBETS: 
+    BUSD: 
+    Treasury:  (Blocksforqueue=2)
+    Bond Calculator1(for LP-pairs): 
+    Bond Calculator2(for single token): 0x0000000000000000000000000000000000000000
+    Distributor:  (epoch.lenght=600, nextblock=16720000)
+    DAO:  (admin=owner, delay=3600s)
+    BUSD-BOND: 
+    BETS-BUSD-LP: 
+    BETS-BUSD-BOND: 
+    TimeLock:  (same as DAO)
+    Staking:  (epoch.length=600, firstepoch=0,firstblock=16720000)
+    Staking Helper: 
+    Staking Warmup: 
+    Redeem Helper: 
+    BETS Faucet: 
+    Circulating Supply: 
+}]
+
+Steps of setup:
+
+BUSD BOND:
+** add staking Helper
+** 
+
+Treasury:
+** Queue Distributor contract with _managing = 8
+** toggle Distributor contract bond calculator2
+** Queue BETS-BUSD LP address with _managing = 5
+** toggle BETS-BUSD with Bond Calculator1
+** Queue BETS-BUSD pair Bond with _managing = 4
+** toggle BETS-BUSD pair bond with Bond Calculator2
+** Queue BUSD Bond with _managing = 0
+** toggle BUSD Bond with Bond Calculator2
+
+Staking:
+** Set Distributor Contract
+** Set Staking Warmup Contract
+
+Redeem Helper:
+** Add Bond Contract - BUSD Bond
+** Add Bond Contract - BETS-BUSD LP Bond
+
